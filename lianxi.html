@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包练习题</title>
+</head>
+
+<body>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <script>
+        // let arr = [[1, 2, 3], 4, 5, 6, [7, 8, [9, 0]], 10];
+        // myEach(arr);
+        // function myEach(arr) {
+        //     arr.forEach(element => {
+        //         if (element instanceof Array) {//也可以 Array.isArray(element)
+        //             // if(Array.isArray(element)){ 
+        //             myEach(element);
+
+        //         } else {
+        //             console.log(element);
+        //         }
+        //     });
+        // }
+        // let x={a:a=0,b:b=2,c:d=3}; 
+        // let xiejie = {
+        //     name: "xiejie",
+        // };
+        // console.log(xiejie.name);//xiejie
+
+        //         let pa = { a: 10, b: 9, c: 30 };
+        //         let { a: a = 1, b: b = 1, c: d = 1 } = pa;//简写let{a=1,b=1,c:d=1}=pa;
+        //         console.log(pa);//{a: 10, b: 9, c: 30}
+        //         console.log(d);//30
+        //         console.log(c);//30
+        //         console.log(pa.c);//30
+
+        //         class Apple {
+        //             constructor(name, age, color) {//构造函数模式
+        //                 this.name = name;
+        //                 this.age = age;
+        //                 this.color = color;
+        //             }
+        //             grow = function () {//原型模式方法写在里面
+        //                 this.age += 1;
+        //                 console.log("苹果额");
+        //                 console.log(this.age);
+        //             }
+        //         }
+        //         Apple.prototype.fromWhere = "china";//原型模式属性还是写在外面
+        //         // let a1=Apple("")
+        //         console.log();
+
+
+
+        // let zs = {
+        //     name: "zs",
+        //     say(a, b) {
+        //         console.log(this.name, a + b)
+        //     }
+        // };
+        // let ls = {
+        //     name: "ls",
+        // }
+        // zs.say(1, 2);//this指向zs
+        // zs.say.call(ls, 1, 2);//强行绑定this到ls，传入不定参数
+        // zs.say.apply(ls, [4, 2]);//强行绑定this到ls，传入数组作为参数
+        // let newBd=zs.say.bind(ls);
+        // newBd(1,2,3);//ls 3
+
+        // function foo(...arg) {
+        //     console.log(arg);
+
+        // }
+
+    
+        // console.log(foo.__proto__ == Function.prototype);//function foo(){}
+        // console.log([].__proto__ == Array.prototype);
+        // console.log({}.__proto__ == Object.prototype);
+        // console.log(Object.__proto__ == Function.prototype);
+
+        function Person(name, age, color) {
+            this.name = name;
+            this.age = age;
+            this.color = color;
+        }//函数对象
+        let p1 = new Person("名字",18, "red");
+        // p1=Apple {name: "pg", age: 2, color: "red"}//生成的普通对象
+        // console.log(a1);//
+        // console.log(a1.grow());//foo grow
+        // console.log(a1.fromWhere);//china
+        // a1.grow();//苹果额   3
+        // a1.grow();//苹果额   4
+        // console.log(p1.__proto__);
+        // console.log(Person.prototype);
+        // console.log(p1.__proto__ == Person.prototype);
+        // console.log(Function.prototype.__proto__==Object.prototype);
+        
+        // console.log(typeof new Function);//function
+
+
+     
+
+    //     this:father=fa;
+    // this:mother=mo;
+    // this:son=son;
+    // this:daugter=dau;
+
+
+function Family(fa,mo,son,dau) {
+    this.fa=fa;
+    // this:mother=mo;
+    // this:son=son;
+    // this:daugter=dau;
+    this.function (son) {
+        console.log(this.son);
+        console.log(this);
+    }
+}
+Family.prototype.smile=function () {
+    console.log(this.son);
+    console.log(this);
+}
+Family.prototype.haha="smile";
+let a=Family("shuai","mei","chou","pang");
+console.log(a);
+
+
+
+
+
+
+
+        
+        // console.log(typeof new Array);
+        // let a=new Function;
+        // console.log(a);
+        // let b=new Set;
+        // console.log(typeof b);//set
+        // let b1={};
+        // console.log(b1);
+        
+        // a=function(){
+        //     console.log(typeof a);
+        // }
+        // a();//function
+        // let c={
+        //     s:function aa(params) {
+        //         console.log(typeof this.s);
+        //     }
+        // };
+        // c.s();//function
+
+
+        
+        
+    </script>
+</body>
+
+</html>
